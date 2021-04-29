@@ -41,9 +41,7 @@ def get_html(url):
             print("Try")
         else:
             x = False
-            print(req.status_code)
             return req.content
-
 
 
 def items_url(categor_links):
@@ -97,15 +95,11 @@ def categories_urls(url):
         cat_urls.append(GLOBAL_URL + cat_url)
     return cat_urls
 
+
 if __name__ == "__main__":
-
     creating()
-    # categor_links = categories_urls(url)
-
-    categor_links = ['https://www.rosteco.ru/catalog/baschmak-natyajitelya-uspokoitel', 'https://www.rosteco.ru/catalog/vtulki',
-     'https://www.rosteco.ru/catalog/dempferyi', 'https://www.rosteco.ru/catalog/kronshteynyi']
-
-    # items_url(categor_links)
+    categor_links = categories_urls(url)
+    items_url(categor_links)
     parsing_item()
 
 
